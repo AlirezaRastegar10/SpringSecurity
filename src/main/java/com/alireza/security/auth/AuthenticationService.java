@@ -1,7 +1,7 @@
 package com.alireza.security.auth;
 
 
-import com.alireza.security.config.JwtService;
+import com.alireza.security.jwt.JwtService;
 import com.alireza.security.dto.auth.AuthenticationRequest;
 import com.alireza.security.dto.auth.AuthenticationResponse;
 import com.alireza.security.dto.auth.RegisterRequest;

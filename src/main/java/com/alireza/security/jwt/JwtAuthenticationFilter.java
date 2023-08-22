@@ -1,4 +1,4 @@
-package com.alireza.security.config;
+package com.alireza.security.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
