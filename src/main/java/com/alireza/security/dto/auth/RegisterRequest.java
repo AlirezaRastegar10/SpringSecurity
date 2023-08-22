@@ -12,6 +12,7 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
 public class RegisterRequest {
 
     @NotBlank(message = "firstname cannot be empty.")
