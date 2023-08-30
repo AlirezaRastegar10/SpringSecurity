@@ -1,5 +1,7 @@
 package com.alireza.security.dto.auth;
 
+import com.alireza.security.entity.enumeration.Role;
+import com.alireza.security.utils.RoleValidation;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -33,4 +35,7 @@ public class RegisterRequest {
     @Size(min = 8, max = 8, message = "password must be 8 characters.")
     @Pattern(regexp = "^(?=.*?\\d)(?=.*?[a-zA-Z])[a-zA-Z\\d]+$", message = "the password must contain numbers and letters.")
     String password;
+
+    @RoleValidation(regexp = "USER|ADMIN")
+    Role role;
 }
