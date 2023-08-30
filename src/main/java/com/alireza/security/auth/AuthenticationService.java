@@ -8,7 +8,6 @@ import com.alireza.security.jwt.JwtService;
 import com.alireza.security.dto.auth.AuthenticationRequest;
 import com.alireza.security.dto.auth.AuthenticationResponse;
 import com.alireza.security.dto.auth.RegisterRequest;
-import com.alireza.security.entity.enumeration.Role;
 import com.alireza.security.mappers.AuthMapperImpl;
 import com.alireza.security.repository.TokenRepository;
 import com.alireza.security.repository.UserRepository;
@@ -39,7 +38,7 @@ public class AuthenticationService {
     public AuthenticationResponse register(RegisterRequest request) {
         var user = authMapper.registerRequestDtoToUser(request);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
-        user.setRole(Role.USER);
+        user.setRole(request.getRole());
         var savedUser = userRepository.save(user);
 
         var jwtToken = jwtService.generateToken(user);
