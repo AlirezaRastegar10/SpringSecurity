@@ -48,4 +48,4 @@ jobs:
           context: .
           dockerfile: dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/SpringSecurity:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/spring-security:latest
